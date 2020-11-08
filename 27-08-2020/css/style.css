@@ -1,0 +1,13 @@
+.nav-bg{
+	background-color: #9b59b6;
+}
+.logo{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.form-control{
+	border: 5px solid red !important;
+	border-radius: .8rem !important;
+}

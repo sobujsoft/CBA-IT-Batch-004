@@ -1,0 +1,57 @@
+.displyPractice{
+	display: block;
+}
+
+.displayInline{
+	display: inline;
+}
+.displayInlineBlock{
+	display: inline-block;
+	color: red;
+}
+
+.align{
+	float: right;
+}
+
+.image{
+	height: 500px;
+	width: 500px;
+
+}
+
+/*.image:hover{
+	opacity: .5;
+	border-radius: 50%;
+	border:5px solid red;
+}*/
+
+.aponVai{
+	color: red;
+	display: inline;
+}
+.aponVai:hover{
+	color: green;
+	font-size: 50px;
+	background-color: black;
+}
+
+.sectionDivide{
+	height: 500px;
+	width: 100%;
+	background-image: linear-gradient(to right, #81ecec,red,#e84393,black,rgb(116, 185, 255));
+}
+.textShadow{
+	font-size: 50px;
+	text-shadow: 3px 3px 3px  red;
+}
+
+.boxShadow{
+	/*border:1px solid black;*/
+	margin:100px;
+	box-shadow: 14px 16px 43px -8px rgba(0,0,0,0.75);
+}
+
+.fontRe{
+	font-family: 'Recursive', sans-serif;
+}

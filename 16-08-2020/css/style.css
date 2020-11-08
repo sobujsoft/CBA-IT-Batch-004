@@ -1,0 +1,37 @@
+.firstSection{
+	height: 600px;
+	background-color: #7f8c8d;
+}
+
+.rowOne{
+	height: 250px;
+	background-color: #9b59b6;
+}
+.rowOnerowOne{
+	height: 50px;
+	background-color: #bdc3c7;
+}
+.rowOneRowTwo{
+	height: 200px;
+	background-color: #1abc9c;
+}
+
+.pink{
+	background-color: #d35400;
+}
+.blue{
+	background-color: #2980b9;
+}
+
+.red{
+	background-color: red;
+}
+
+.yellow{
+	background-color: #f1c40f;
+}
+
+.rowTwo{
+	height: 200px;
+	background-color: #34495e;
+}

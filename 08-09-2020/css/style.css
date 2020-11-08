@@ -1,0 +1,24 @@
+.divHeight{
+    height: 500px;
+    width: 100%;
+    background-color: blue;
+}
+
+@media (max-width: 576px) { 
+    .redBack{
+        background-color: red;
+        border: 8px solid black;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 876px) { 
+    .redBack{
+        background-color: black;
+    }
+}
+
+@media (max-width: 576px) { 
+    .btn-primary{
+        background-color: red !important;
+    }
+}

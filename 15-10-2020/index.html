@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Dom</title>
+</head>
+<body>
+    
+    <img id="ImageID" src="img/pic_bulboff.gif" alt="">
+    <button onclick="document.getElementById('ImageID').src='img/pic_bulbon.gif'">Turn on</button>
+    <button onclick="document.getElementById('ImageID').src='img/pic_bulboff.gif'">Turn off</button>
+
+    <hr>
+
+    <p>Introduction</p>
+
+    <button onclick="document.getElementById('IntroID').innerHTML='Hello I am Khaled'">Khaled Vai</button>
+    <button onclick="document.getElementById('NazmulBoxID').value='Hello I am Nazmul'">Nazmul Vai</button>
+
+    <button onclick="document.getElementById('NazmulBoxID').value=''">Clear Form</button>
+
+    <h1 id="IntroID" style="color: red;"></h1>
+
+
+    <input id="NazmulBoxID" value="" type="text" name="">
+
+</body>
+</html>

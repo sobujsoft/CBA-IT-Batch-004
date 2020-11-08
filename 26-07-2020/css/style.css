@@ -1,0 +1,23 @@
+.textFormating{
+	color: red;
+	text-align: center;
+	text-decoration: underline;
+	text-transform: lowercase;
+	text-indent: 50px;
+	letter-spacing: 2px;
+	line-height: 50px;
+	word-spacing: 20px;
+}
+
+.fontCorona{
+	font-family: 'Krona One', sans-serif;
+}
+
+.fontJosef{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.fontAwesomeCustom{
+	color: blue;
+	font-size: 30px;
+}

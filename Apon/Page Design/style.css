@@ -1,0 +1,168 @@
+/* Navber css start */
+.NavBgcolor{
+    background-color: #FAF9FF !important;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right:20px !important;
+    padding-left: 20px !important;
+    padding-top: 19px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+/* Navber css close */
+/* THIS IS ME section start */
+.paddingTop{
+    padding-top: 50px;
+}
+.ThisIsMeText{
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px!important ;
+    padding: 2px !important;
+}
+.TRAVORJAMES{
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    padding-top: 20px !important;
+}
+
+.TextP{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.firstbutton{
+    padding: 0px 42px;
+    line-height: 50px;
+    background-size: 200% auto;
+    color: #fff;
+    background: linear-gradient(to right, #8490ff 0%, #62bdfc 48%, #8490ff 100%) !important;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+.firstbutton a{
+    text-decoration: none;
+    color: white;
+}
+/* THIS IS ME section close */
+
+/* exprence section */
+.fa, .fas {
+    font-weight: 900 !important;
+    font-size: 30px !important;
+    color: #62BDFC !important;
+}
+.fontAsswame{
+border: 2px solid #EEEEEE;
+border-radius: 5%;
+margin: 1px;
+}
+.fontWeat{
+    font-weight: bold !important;
+}
+.exprence{
+    background-color: black;
+    border: 2px solid #EEEEEE;
+}
+.Padding{
+    padding: 5%;
+}
+
+
+
+
+/* OFFERINGS TO MY CLIENTS */
+.OFFERINGS{
+    background-color: #F9F9FF;
+}
+.Icon{
+    font-size: 60px !important;
+    margin-left: 10px;
+
+}
+.Icon:hover{
+    background-color;
+}
+.Padding{
+    padding: 5%;
+}
+.card:hover{
+    -webkit-box-shadow: 5px 7px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 7px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 7px 25px 0px rgba(0,0,0,0.75);
+}
+
+
+
+
+
+
+.Imagesposition{
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 500px;
+    width: 500px;
+}
+.Imgcontant{
+    position: absolute;
+    top: 250px;
+    left: 15px;
+    bottom: 0;
+
+}
+.Imagesposition:hover{
+    opacity: .4;
+}
+.Imgcontant:hover{
+    color: blue;
+}
+.M-top{
+    margin-top: -150px;
+    margin-left: -15px;
+}
+
+/* TESTIMONIALS */
+.Tbaccolor{
+    margin: auto;
+    background-color: #F9F9FF;
+}
+.testMonial{
+    margin: 10px 15px;
+}
+.TestPadding{
+    padding: 5%;
+}
+.Tcolor{
+    color: #FFC000;
+}
+
+
+
+
+
+.footerColor{
+    background-color: black;
+    padding: 5%;
+}
+.fpc{
+    color: #777766;
+}
+
+.footer-icon{
+    color: white;
+}
+.footer-padding:hover{
+        color: blue;
+}
+.footer-padding{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.over{
+    overflow: hidden;
+}

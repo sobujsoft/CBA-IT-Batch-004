@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON</title>
+</head>
+<body>
+
+
+<script>
+
+//JSON ---> JS-> JavaScript O->Object  N->Notation
+
+let jsArray=["a","b","c"];
+let person={teacher:"Sobuj",student:"Arafat",supporting_teacher:"Imran Vai"};
+let nazmulVai={name:"Namzul Hasan",age:24,education:"MBA Running",address:"Jhenaidah",marrage_status:true};
+// console.log(nazmulVai["name"]);
+
+
+
+let studentInfo={
+    "Apon":{name:"Apon",age:"24",education:"Honours 3rd year",address:"Bagmara, Rajshahi"},
+    "Nazmul":{name:"Namzul Hasan",age:"24",education:"MBA Running",address:"Jhenaidah"},
+    teacher:"Sobuj"
+}
+
+// console.log(studentInfo.Apon.address)
+// console.log(studentInfo['Nazmul']['address']);
+// console.log(studentInfo['teacher']);
+
+let country={
+    Our_Country:"Bangladesh",
+    "Bangladesh":{
+        currency:"Taka",
+        "Tour":{
+            advanger:"Tanguar Haur",mountain:"Bandarban",
+            "Rivers":{main_river:"Padma",small_river:"Buriganga"},
+            sea_beatch:"CoxBazar"
+        }
+    },
+    Nationality:"Bangladeshi",
+    "Division":["Rajshahi","Dhaka","Khulna"]
+}
+/*
+console.log(country['Bangladesh']['currency']);
+console.log(country['Our_Country']);
+console.log(country['Bangladesh']['Tour']['mountain']);
+console.log(country['Division'][1]);
+console.log(country.Division[0]);
+ */
+
+let simpleString='{"name":"Shayikh","age":"18"}';
+let jsonConvert= JSON.parse(simpleString);
+// console.log(jsonConvert['age']);
+
+let simpleJSON= {name:"Arafat",age:"12",myday:"Yes"};
+let jsonStringConvert= JSON.stringify(simpleJSON);
+console.log(jsonStringConvert);
+</script>
+
+</body>
+</html>

@@ -5,11 +5,14 @@
 </head>
 <body>
 
+<h1>Date:<span style="color: red;" id="dateID"></span></h1>
+<h3>Time:<span style="color: aqua;" id="timeID"></span></h3>
+
 
 <script>
 
 //JSON ---> JS-> JavaScript O->Object  N->Notation
-
+/*
 let jsArray=["a","b","c"];
 let person={teacher:"Sobuj",student:"Arafat",supporting_teacher:"Imran Vai"};
 let nazmulVai={name:"Namzul Hasan",age:24,education:"MBA Running",address:"Jhenaidah",marrage_status:true};
@@ -40,13 +43,13 @@ let country={
     Nationality:"Bangladeshi",
     "Division":["Rajshahi","Dhaka","Khulna"]
 }
-/*
+
 console.log(country['Bangladesh']['currency']);
 console.log(country['Our_Country']);
 console.log(country['Bangladesh']['Tour']['mountain']);
 console.log(country['Division'][1]);
 console.log(country.Division[0]);
- */
+
 
 let simpleString='{"name":"Shayikh","age":"18"}';
 let jsonConvert= JSON.parse(simpleString);
@@ -55,6 +58,35 @@ let jsonConvert= JSON.parse(simpleString);
 let simpleJSON= {name:"Arafat",age:"12",myday:"Yes"};
 let jsonStringConvert= JSON.stringify(simpleJSON);
 console.log(jsonStringConvert);
+
+ */
+
+//10-11-2020 Class
+getJsonData();
+function getJsonData(){
+    var url="http://date.jsontest.com/";
+    var request;
+    if (window.XMLHttpRequest){
+        request= new XMLHttpRequest();
+    }
+    request.onreadystatechange=function (){
+        if (request.readyState==4){
+            var jsonObj= JSON.parse(request.responseText);
+            let date= document.querySelector('#dateID');
+            let time= document.querySelector('#timeID');
+
+            date.innerHTML=jsonObj['date'];
+            time.innerHTML=jsonObj['time'];
+        }
+    }
+
+    request.open("GET",url);
+    request.send();
+
+}
+
+
+
 </script>
 
 </body>

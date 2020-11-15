@@ -36,3 +36,26 @@ $('#arafatBtn').click(function (){
     //data set
     $('#setValue').html(arafatName);
 })
+
+
+$('#newAppendID').click(function (){
+
+    let id=$('#id').val();
+    let name=$('#nameID').val();
+    let phone=$('#phoneID').val();
+    let email=$('#emailID').val();
+
+    //single line
+
+    // let tableRow="<tr> <td>"+id+"</td> <td>"+name+"</td> <td>"+phone+"</td> <td>"+email+"</td></tr>";
+
+
+    let tableRow="<tr>" +
+        "<td>"+id+"</td>"+
+        "<td>"+name+"</td>"+
+        "<td>"+phone+"</td>"+
+        "<td>"+email+"</td>"+
+        "</tr>"
+
+    $('#tableData').append(tableRow);
+})

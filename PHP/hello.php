@@ -56,4 +56,45 @@ for ($i=0;$i<10;$i++){
     echo $i."Hello I am for Loop <br>";
 }
 
+echo "<br>";
+
+//1-12-2020-class
+echo "1-12-2020-class";echo "<br>";
+
+
+$number=9;
+$result=1;
+for($i=$number;$i>0; $i--){
+    $result *= $i;
+}
+echo $result;
+echo "<br>";
+
+
+$namtaNumber=12;
+for($i=1;$i<11;$i++){
+    $namtaResult=$namtaNumber*$i;
+    echo $namtaNumber." x ".$i." =".$namtaResult."<br>";
+}
+
+$testArray=["Apon","Nazmul","Chandan",456];
+
+print_r($testArray[3]) ;
+
+echo "<br>";
+
+//associative array
+
+$associativeArray=["Name"=>"Ariful","Age"=>"18-","Address"=>"Gazipur,Dhaka"];
+
+print_r($associativeArray['Age']);
+
+echo "<br>";
+
+
+
+for ($i=0;$i<count($testArray);$i++){
+    print_r($testArray[$i]."<br>");
+}
+
 ?>

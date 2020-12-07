@@ -1,5 +1,5 @@
 <?php 
-
+/*
 //echo('5+7');
 
 $a=20;
@@ -92,9 +92,43 @@ print_r($associativeArray['Age']);
 echo "<br>";
 
 
-
 for ($i=0;$i<count($testArray);$i++){
     print_r($testArray[$i]."<br>");
 }
 
+*/
+//03-12-2020
+
+$name="Sobuj";
+//echo "My Name Is {$name}";
+
+$number=123456.56;
+
+//var_dump($number);
+
+$firstName="Sobuj";
+$lastName="Ahmed";
+$middleName="Nai";
+//echo "My first name is {$firstName} and last name is {$lastName}";
+
+//echo $firstName."\n".$lastName;
+
+//printf("My first name is %s Middle name is %s and my last name is %s",$firstName,$middleName,$lastName);
+
+$output= sprintf("My first name is %s Middle name is %s and my last name is %s",$firstName,$middleName,$lastName);
+
+//echo $output;
+
+//printf(-5%3);
+
+$x=2;
+$y=5;
+//$result=$x**$y;
+//echo $result;
+
+$result=$x+$y;
+echo $x*=$y;
+
 ?>
+
+

@@ -25,8 +25,13 @@ $(selector).action();
 
 
 $('#hideOneBtn').click(function(){
-	$('#headOne').hide();
+	$('#headOne').hide('slow',function (){
+		alert("Hide Done");
+	});
 });
+
+
+
 
 $('#showTwoBtn').click(function(){
 	$('#headTwo').show();
@@ -36,3 +41,35 @@ $('#toggleBtn').click(function(){
 	$('#headThree').toggle();
 	$('#headOne').toggle();
 });
+
+$('#fadeOut').click(function (){
+	$('#divOne').fadeOut();
+});
+
+$('#fadeInBtn').click(function (){
+	$('#divtwo').fadeIn();
+});
+
+//fadeToggle();
+//slideUp()
+//slideDown()
+//slideToggle()
+
+$('#slideDownBtn').dblclick(function (){
+	$('#slideDownDiv').slideToggle();
+})
+
+
+//data get
+$('#nameID').keyup(function (){
+	let name= $('#nameID').val();
+	// let HeadingOne= $('#headOne').text();
+
+	$('#nameData').html(name);
+
+})
+
+//set
+
+
+

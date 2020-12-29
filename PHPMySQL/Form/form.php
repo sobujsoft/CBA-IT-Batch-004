@@ -5,7 +5,8 @@ $dbPassword="";
 $dbName="cbait_batch_four_test";
 $connection= mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName);
 
-$msg="";
+$msg='';
+
 
 if (isset($_POST['submit'])){
     $name=$_POST['name'];
@@ -16,13 +17,22 @@ if (isset($_POST['submit'])){
     $run=mysqli_query($connection,$insertSQL);
 
     if ($run==true){
-        $msg= "Data Successfully Submitted";
+        $msg=  "Data Successfully Submitted";
     }
     else{
         $msg= "Failed ! Please Try Again";
     }
 
 }
+
+
+$message="Hello Message";
+
+/*
+for($i=0;$i<10;$i++){
+    echo "<br>".$i;
+}
+*/
 
 ?>
 
@@ -80,6 +90,31 @@ if (isset($_POST['submit'])){
 
         </div>
     </form>
+
+    <div class="row">
+
+        <?php for ($i=0;$i<4;$i++){ ?>
+        <div class="col-md-6">
+            <h3 class="bg-success"> <?php echo $message; ?> </h3>
+        </div>
+        <?php } ?>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/06/08/15/02/pug-801826_1280.jpg">
+            <h4>Dog's Image</h4>
+        </div>
+
+        <?php for ($i=0;$i<4;$i++){ ?>
+        <div class="col-md-4">
+            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/06/08/15/02/pug-801826_1280.jpg">
+            <h4><?php  echo $message;?></h4>
+        </div>
+        <?php } ?>
+
+    </div>
 </div>
 
 <!-- Optional JavaScript; choose one of the two! -->

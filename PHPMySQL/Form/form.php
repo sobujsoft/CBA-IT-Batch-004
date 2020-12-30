@@ -26,13 +26,9 @@ if (isset($_POST['submit'])){
 }
 
 
-$message="Hello Message";
+$selectSQL="SELECT * FROM `students`";
+$runSelect=mysqli_query($connection,$selectSQL);
 
-/*
-for($i=0;$i<10;$i++){
-    echo "<br>".$i;
-}
-*/
 
 ?>
 
@@ -92,29 +88,32 @@ for($i=0;$i<10;$i++){
     </form>
 
     <div class="row">
+        <div class="col-md-12">
+            <h3 class="mt-4 text-success" align="center">Student List</h3>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone No</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
 
-        <?php for ($i=0;$i<4;$i++){ ?>
-        <div class="col-md-6">
-            <h3 class="bg-success"> <?php echo $message; ?> </h3>
+                <?php while ($data=mysqli_fetch_assoc($runSelect)){ ?>
+                <tr>
+                    <td><?php echo $data['name'] ?></td>
+                    <td><?php echo $data['phone'] ?></td>
+                    <td><?php echo $data['email'] ?></td>
+                </tr>
+                <?php } ?>
+
+                </tbody>
+            </table>
         </div>
-        <?php } ?>
-
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/06/08/15/02/pug-801826_1280.jpg">
-            <h4>Dog's Image</h4>
-        </div>
 
-        <?php for ($i=0;$i<4;$i++){ ?>
-        <div class="col-md-4">
-            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/06/08/15/02/pug-801826_1280.jpg">
-            <h4><?php  echo $message;?></h4>
-        </div>
-        <?php } ?>
-
-    </div>
 </div>
 
 <!-- Optional JavaScript; choose one of the two! -->

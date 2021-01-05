@@ -1,33 +1,15 @@
 <?php
-$dbHost="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbName="cbait_batch_four_test";
-$connection= mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName);
+include "connection.php";
+$id= $_GET['id'];
+$selectData="SELECT * FROM `students` WHERE `id`='$id'";
+$runSelectSQL=mysqli_query($connection,$selectData);
 
-$msg='';
-
-
-if (isset($_POST['submit'])){
-    $name=$_POST['name'];
-    $phone= $_POST['phoneNo'];
-    $email=$_POST['emailID'];
-
-    $insertSQL="INSERT INTO `students`(`name`, `phone`, `email`) VALUES ('$name','$phone','$email')";
-    $run=mysqli_query($connection,$insertSQL);
-
-    if ($run==true){
-        $msg=  "Data Successfully Submitted";
-    }
-    else{
-        $msg= "Failed ! Please Try Again";
-    }
-
-}
+$data=mysqli_fetch_assoc($runSelectSQL);
 
 
-$selectSQL="SELECT * FROM `students`";
-$runSelect=mysqli_query($connection,$selectSQL);
+
+
+
 
 
 ?>
@@ -42,17 +24,14 @@ $runSelect=mysqli_query($connection,$selectSQL);
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>Reg Form</title>
+    <title>Form Edit</title>
 </head>
 <body>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3 align="center">Registration Form</h3>
-
-            <div class="alert alert-success" role="alert">
-                <?php echo $msg;?>
-            </div>
+            <h3 align="center">Edit Data</h3>
         </div>
     </div>
     <form method="post" action="">
@@ -60,63 +39,32 @@ $runSelect=mysqli_query($connection,$selectSQL);
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Name</label>
-                    <input name="name" class="form-control" type="text">
+                    <input required value="<?php echo $data['name']?>" name="" class="form-control" type="text">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Phone No</label>
-                    <input name="phoneNo" class="form-control" type="text">
+                    <input value="<?php echo $data['phone']?>" name="" class="form-control" type="text">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Email</label>
-                    <input name="emailID" class="form-control" type="text">
+                    <input value="<?php echo $data['email']?>" name="" class="form-control" type="text">
                 </div>
             </div>
 
             <div class="col-md-6 pt-4">
                 <div class="form-group">
-                    <input name="submit" value="SEND" class="form-control btn btn-success" type="submit">
+                    <input name="" value="UPDATE" class="form-control btn btn-success" type="submit">
                 </div>
             </div>
 
         </div>
     </form>
-
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="mt-4 text-success" align="center">Student List</h3>
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Phone No</th>
-                    <th>Email</th>
-                    <th colspan="2">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <?php while ($data=mysqli_fetch_assoc($runSelect)){ ?>
-                <tr>
-                    <td><?php echo $data['name'] ?></td>
-                    <td><?php echo $data['phone'] ?></td>
-                    <td><?php echo $data['email'] ?></td>
-                    <td><a href="formEdit.php?id=<?php echo $data['id']?>" class="btn btn-success">Edit</a></td>
-                    <td>Delete</td>
-                </tr>
-                <?php } ?>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-
 </div>
 
 <!-- Optional JavaScript; choose one of the two! -->

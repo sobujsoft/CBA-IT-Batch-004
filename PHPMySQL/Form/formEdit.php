@@ -7,9 +7,22 @@ $runSelectSQL=mysqli_query($connection,$selectData);
 $data=mysqli_fetch_assoc($runSelectSQL);
 
 
+if (isset($_POST['update'])){
+    $name= $_POST['name_edit'];
+    $phone= $_POST['phone_edit'];
+    $email= $_POST['email_edit'];
+    $updateSQL="UPDATE `students` SET `name`='$name',`phone`='$phone',`email`='$email' WHERE `id`='$id'";
 
+    $runUpdate= mysqli_query($connection,$updateSQL);
 
+    if ($runUpdate==true){
+        header('location:form.php?message=Successfully Updated');
 
+    }
+    else{
+        echo "Failed ! Please Try Again";
+    }
+}
 
 
 ?>
@@ -39,27 +52,27 @@ $data=mysqli_fetch_assoc($runSelectSQL);
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Name</label>
-                    <input required value="<?php echo $data['name']?>" name="" class="form-control" type="text">
+                    <input required value="<?php echo $data['name']?>" name="name_edit" class="form-control" type="text">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Phone No</label>
-                    <input value="<?php echo $data['phone']?>" name="" class="form-control" type="text">
+                    <input value="<?php echo $data['phone']?>" name="phone_edit" class="form-control" type="text">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Email</label>
-                    <input value="<?php echo $data['email']?>" name="" class="form-control" type="text">
+                    <input value="<?php echo $data['email']?>" name="email_edit" class="form-control" type="text">
                 </div>
             </div>
 
             <div class="col-md-6 pt-4">
                 <div class="form-group">
-                    <input name="" value="UPDATE" class="form-control btn btn-success" type="submit">
+                    <input name="update" value="UPDATE" class="form-control btn btn-success" type="submit">
                 </div>
             </div>
 

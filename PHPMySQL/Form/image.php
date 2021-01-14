@@ -1,3 +1,45 @@
+<?php
+include 'connection.php';
+
+$seletSQL="SELECT * FROM `image`";
+$runSelect=mysqli_query($connection,$seletSQL);
+
+if (isset($_POST['submitBtn'])){
+    $uniqueID= date("Y-M-D-H-i-s");
+    $imageOldName= $_FILES['image_khan_bahadur']['name'];
+    $imageNewName= $uniqueID.'_sobuj_'.$imageOldName;
+    $image_temp= $_FILES['image_khan_bahadur']['tmp_name'];
+    move_uploaded_file($image_temp,"image/$imageNewName");
+
+    $image_insert_sql="INSERT INTO `image`(`img`) VALUES ('$imageNewName')";
+    $runInsertSQL=mysqli_query($connection,$image_insert_sql);
+    if ($runInsertSQL==true){
+        header('location:image.php?message=Success');
+    }
+    else{
+        header('location:image.php?message=Failed');
+    }
+}
+
+if (isset($_POST['DeleteBtn'])){
+    $ID=$_GET['id'];
+    $imageName=$_GET['image'];
+
+    unlink("image/$imageName");
+
+    $deleteSQL="DELETE FROM `image` WHERE `id`='$ID'";
+    $runDelete=mysqli_query($connection,$deleteSQL);
+    if ($runDelete==true){
+        header('location:image.php?message=Success');
+    }
+    else{
+        header('location:image.php?message=Failed');
+    }
+
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +64,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <input name="image" required class="form-control" type="file">
+                    <input name="image_khan_bahadur" required class="form-control" type="file">
                 </div>
             </div>
             <div class="col-md-6">
@@ -32,6 +74,29 @@
             </div>
         </div>
     </form>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php while ($data=mysqli_fetch_assoc($runSelect)){?>
+                <tr>
+                    <td><?php echo $data['id']?></td>
+                    <td><img style="height: 100px;width: 100px;" src="image/<?php echo $data['img']?>"></td>
+                    <td><form action="image.php?id=<?php echo $data['id']?>&image=<?php echo $data['img']?>" method="post"><input name="DeleteBtn" class="btn btn-danger" value="DELETE" type="submit"></form></td>
+                </tr>
+                <?php }?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- Optional JavaScript; choose one of the two! -->

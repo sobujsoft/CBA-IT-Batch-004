@@ -1,6 +1,8 @@
 <?php
 include "connection.php";
 $id= $_GET['id'];
+$email=$_GET['email'];
+echo $email;
 $selectData="SELECT * FROM `students` WHERE `id`='$id'";
 $runSelectSQL=mysqli_query($connection,$selectData);
 

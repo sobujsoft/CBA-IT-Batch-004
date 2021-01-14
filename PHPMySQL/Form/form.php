@@ -127,7 +127,7 @@ if (isset($_POST['delete'])){
                     <td><?php echo $data['name'] ?></td>
                     <td><?php echo $data['phone'] ?></td>
                     <td><?php echo $data['email'] ?></td>
-                    <td><a href="formEdit.php?id=<?php echo $data['id']?>" class="btn btn-success">Edit</a></td>
+                    <td><a href="formEdit.php?id=<?php echo $data['id']?>&email=<?php echo $data['email']?>" class="btn btn-success">Edit</a></td>
                     <td><form method="post" action="form.php?did=<?php echo $data['id']?>"><input onclick="return confirm('Do You Want To Delete ?')" name="delete" class="btn btn-danger" value="DELETE" type="submit"></form></td>
                 </tr>
                 <?php } ?>

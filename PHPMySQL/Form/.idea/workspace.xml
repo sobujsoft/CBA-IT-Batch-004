@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="46e3c575-531e-4121-b2c8-a68f1dc8037d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/formEdit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image.php" beforeDir="false" afterPath="$PROJECT_DIR$/image.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +27,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -48,7 +47,9 @@
       <workItem from="1610026420886" duration="4151000" />
       <workItem from="1610291729936" duration="4555000" />
       <workItem from="1610430542508" duration="58000" />
-      <workItem from="1610630998036" duration="6004000" />
+      <workItem from="1610630998036" duration="7581000" />
+      <workItem from="1610787138768" duration="55000" />
+      <workItem from="1610897707193" duration="2202000" />
     </task>
     <servers />
   </component>

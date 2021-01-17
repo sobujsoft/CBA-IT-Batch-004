@@ -82,7 +82,7 @@ if (isset($_POST['DeleteBtn'])){
                 <tr>
                     <th>ID</th>
                     <th>Image</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -91,6 +91,7 @@ if (isset($_POST['DeleteBtn'])){
                     <td><?php echo $data['id']?></td>
                     <td><img style="height: 100px;width: 100px;" src="image/<?php echo $data['img']?>"></td>
                     <td><form action="image.php?id=<?php echo $data['id']?>&image=<?php echo $data['img']?>" method="post"><input name="DeleteBtn" class="btn btn-danger" value="DELETE" type="submit"></form></td>
+                    <td><a href="imageEdit.php?id=<?php echo $data['id']?>" class="btn btn-success">Edit</a></td>
                 </tr>
                 <?php }?>
                 </tbody>

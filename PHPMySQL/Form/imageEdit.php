@@ -1,12 +1,35 @@
 <?php
 include 'connection.php';
 
-$ID= $_GET['id'];
-$selectDataSQL="SELECT * FROM `image` WHERE `id`='$ID'";
-$runSelectSQL=mysqli_query($connection,$selectDataSQL);
-$editData= mysqli_fetch_assoc($runSelectSQL);
+$ID=$_GET['id'];
+$selectSQL="SELECT * FROM `image` WHERE `id`='$ID'";
+$runSelect=mysqli_query($connection,$selectSQL);
+$editData=mysqli_fetch_assoc($runSelect);
 
-$OldImageName=$editData['img'];
+$OldImage=$editData['img'];
+
+//edit code start
+
+if (isset($_POST['updateBtn'])){
+
+    $uniqueID= date("Y-M-D-H-i-s");
+    $imageOldName= $_FILES['imageEdit']['name'];
+    $imageNewName= $uniqueID.'_sobuj_'.$imageOldName;
+    $image_temp= $_FILES['imageEdit']['tmp_name'];
+    move_uploaded_file($image_temp,"image/$imageNewName");
+    unlink("image/$OldImage");
+
+    $updateSQL="UPDATE `image` SET `img`='$imageNewName' WHERE `id`='$ID'";
+    $runUpdate=mysqli_query($connection,$updateSQL);
+    if ($runUpdate==true){
+        header('location:image.php');
+    }
+    else{
+        echo 'Failed';
+    }
+
+
+}
 
 
 ?>
@@ -26,17 +49,17 @@ $OldImageName=$editData['img'];
 <body>
 
 <div class="container">
-    <form action="image.php" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-6">
                 <img style="width: 100%" src="image/<?php echo $editData['img']?>">
                 <div class="form-group">
-                    <input class="form-control"  type="file">
+                    <input required name="imageEdit" class="form-control"  type="file">
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-center">
                 <div class="form-group">
-                    <input class="form-control btn btn-success" value="UPDATE" type="submit">
+                    <input name="updateBtn" class="form-control btn btn-success" value="UPDATE" type="submit">
                 </div>
             </div>
         </div>

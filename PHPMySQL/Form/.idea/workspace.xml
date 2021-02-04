@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="46e3c575-531e-4121-b2c8-a68f1dc8037d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/2021-Jan-Sun-16-36-14_sobuj_13_53_34_guru-music-2-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/2021-Jan-Sun-16-36-27_sobuj_0127053_dhele-dei-t-shirt-for-men-843_550.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imageEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/imageEdit.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Kistimath/Ecommerce/Marchant" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -54,7 +51,8 @@
       <workItem from="1610897707193" duration="3071000" />
       <workItem from="1610966238107" duration="599000" />
       <workItem from="1610977335157" duration="60000" />
-      <workItem from="1611064977773" duration="2491000" />
+      <workItem from="1611064977773" duration="3087000" />
+      <workItem from="1611120440790" duration="1155000" />
     </task>
     <servers />
   </component>

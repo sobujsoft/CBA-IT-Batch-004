@@ -31,6 +31,18 @@ class model{
             return false;
         }
     }
+
+    function DeleteRegData($id){
+        $deleteSQL="DELETE FROM `registration` WHERE `id`='$id'";
+        $connectionObj= new connection();
+        $result=$connectionObj->runSQLQuery($deleteSQL);
+        if ($result==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 
 ?>

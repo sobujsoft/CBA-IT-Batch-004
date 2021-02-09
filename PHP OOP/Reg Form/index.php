@@ -13,6 +13,17 @@ if (isset($_POST['submit'])){
     }
 }
 
+if(isset($_POST['DeleteBtn'])){
+    $deleteID= $_GET['id'];
+    $deleted= $modelObj->DeleteRegData($deleteID);
+    if ($deleted==true){
+        header('location:index.php');
+    }
+    else{
+        echo "Failed! Try Again";
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -83,6 +94,7 @@ if (isset($_POST['submit'])){
                     <th>Email</th>
                     <th>Phone No</th>
                     <th>Address</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -92,6 +104,7 @@ if (isset($_POST['submit'])){
                     <td><?php echo $data['email']?></td>
                     <td><?php echo $data['phone']?></td>
                     <td><?php echo $data['address']?></td>
+                    <td><form action="index.php?id=<?php echo $data['id']?>" method="post"><input name="DeleteBtn" class="btn btn-danger" value="DELETE" type="submit"></form></td>
                 </tr>
                 <?php } ?>
                 </tbody>

@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/LoginPage',[AdminLoginController::class,'LoginPage']);
+Route::post('/AdminLoginCheck',[AdminLoginController::class,'AdminLoginCheck']);

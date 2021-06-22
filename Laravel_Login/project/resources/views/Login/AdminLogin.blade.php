@@ -27,21 +27,20 @@
     <div style="margin-top: 150px;" class="row ">
         <div style="background-color: #1b2028;border-radius: 10%;" class="col-md-6 mx-auto ">
             <h3 class="text-center text-white mt-3"> <strong> <i> ADMIN PANEL </i> </strong> </h3>
-            <form class="px-5 pb-5" action="" method="POST">
+
                 <div class="mb-3 py-2">
                     <label for="email" class="form-label"> <i class="text-white"> <strong> EMAIL </strong>
                         </i> </label>
-                    <input name="email" type="email" class="form-control" id="email">
+                    <input name="email" type="email" class="form-control" id="emailID">
                 </div>
                 <div class="mb-3 py-2">
                     <label for="password" class="form-label"> <i class="text-white"> <strong> PASSWORD </strong>
                         </i> </label>
-                    <input name="password" type="password" class="form-control" id="password">
+                    <input name="password" type="password" class="form-control" id="passwordID">
                 </div>
 
-                <button type="submit" class="btn btn-design"> <i class="text-white"> <strong> LOGIN </strong> </i>
-                </button>
-            </form>
+                <button id="LoginBtnID" type="submit" class="btn btn-design text-white">   LOGIN </button>
+
 
         </div>
     </div>
@@ -52,7 +51,50 @@
 <script src="{{ asset('/LoginAsset/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('/LoginAsset/js/jquery.js') }}"></script>
 <script src="{{ asset('/LoginAsset/js/toastr.min.js') }}"></script>
+<script src="{{ asset('/LoginAsset/js/axios.min.js') }}"></script>
 <script src="{{ asset('/LoginAsset/js/config.js') }}"></script>
+
+<script>
+
+    $('#LoginBtnID').on('click',function (){
+        let email=$('#emailID').val();
+        let password=$('#passwordID').val();
+
+        if (email.length==0){
+            ErrorToast('Email Required');
+        }
+        else if (password.length==0){
+            ErrorToast('Password Required');
+        }
+        else {
+            let MyFormData= new FormData();
+            MyFormData.append('email',email);
+            MyFormData.append('password',password);
+
+            let URL='/AdminLoginCheck';
+            let config={ headers: { 'Content-Type': 'application/json' } };
+
+            axios.post(URL,MyFormData,config).then(function (response){
+                if (response.status==200){
+                    if (response.data==0){
+                        ErrorToast('Incorrect Email Or Password');
+                    }
+                    else {
+                        window.location='/';
+                        SuccessToast('Login Success');
+                    }
+                }
+                else {
+                    ErrorToast('Something went wrong!');
+                }
+            }).catch(function (error){
+                    ErrorToast('Something Went Wrong');
+                });
+        }
+
+    });
+
+</script>
 </body>
 
 </html>

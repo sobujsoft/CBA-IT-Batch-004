@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('adminLogin');
 
 Route::get('/LoginPage',[AdminLoginController::class,'LoginPage']);
 Route::post('/AdminLoginCheck',[AdminLoginController::class,'AdminLoginCheck']);
+Route::get('/AdminLogOut',[AdminLoginController::class,'AdminLogOut']);

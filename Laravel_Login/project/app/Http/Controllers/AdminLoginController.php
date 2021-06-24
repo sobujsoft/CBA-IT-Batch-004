@@ -24,4 +24,9 @@ class AdminLoginController extends Controller
             return 0;
         }
     }
+
+    function AdminLogOut(Request $request){
+        $request->session()->flush();
+        return redirect('/LoginPage');
+    }
 }

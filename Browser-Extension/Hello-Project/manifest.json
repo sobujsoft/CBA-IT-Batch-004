@@ -1,7 +1,20 @@
 {
+  "manifest_version": 2,
+  "version": "1.0",
   "name": "Hello World",
   "description": "This test Hello World application",
-  "version": "1.0",
-  "manifest_version": 3
+
+  "icons": {
+    "16": "image/16.png",
+    "48": "image/48.png",
+    "128": "image/128.png"
+  },
+
+  "browser_action": {
+    "default_icon": "image/48.png",
+    "default_popup": "index.html"
+  },
+
+  "permissions": ["activeTab"]
 
 }

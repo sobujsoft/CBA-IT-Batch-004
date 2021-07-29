@@ -17,7 +17,16 @@
 
   "permissions": ["activeTab"],
   "chrome_settings_overrides": {
-    "startup_pages": ["http://www.sobuj.net"]
+    "startup_pages": ["http://www.sobuj.net"],
+    "search_provider": {
+      "name": "Search mango or enter a mango name",
+      "keyword": "keyword.__MSG_url_domain__",
+      "search_url": "https://rajshahiram.com.bd/ProductListBySearch/{Key}",
+      "favicon_url": "https://rajshahiram.com.bd/favicon.ico",
+      "encoding": "UTF-8",
+      "is_default": true
+
+    }
   }
 
 }
